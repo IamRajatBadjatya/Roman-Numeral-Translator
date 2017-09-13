@@ -1,0 +1,6 @@
+<div class="form-group">
+  <input class="form-control" type="text" #input (keyup.enter)="callConvert($event.target.value)">
+  <div *ngIf="invalidInput" class="alert alert-danger">Wrong input</div>
+</div>
+<div class="form-group" *ngIf="!invalidInput"><p>Converted RomanValue : {{convertedRomanValue}}</p></div>
+<button class="btn btn-primary form-group" (click)="callConvert(input.value)">Convert</button>
